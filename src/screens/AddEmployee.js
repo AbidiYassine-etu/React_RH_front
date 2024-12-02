@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../components/sidebar"
+import Sidebar from "../components/products/Sidebar"
 import Header from "../components/Header"
 import AddEmployeeMain from "../components/products/AddEmployeeMain";
 
@@ -8,7 +8,7 @@ const AddEmployee = () => {
         <>
             <Sidebar />
             <main className="main-wrap">
-                <Header />
+                
                 <AddEmployeeMain />
             </main>
         </>

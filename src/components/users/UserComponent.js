@@ -5,7 +5,7 @@ const UserComponent = () => {
   return (
     <section className="content-main">
       <div className="content-header">
-        <h2 className="content-title">Utilisateurs</h2>
+        <h2 className="content-title">Employés</h2>
       </div>
 
       <div className="card mb-4">
@@ -20,9 +20,11 @@ const UserComponent = () => {
             </div>
           </div>
         </header>
+
         {/* Card */}
         <div className="card-body">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+            {/* Employé */}
             <div className="col">
               <div className="card card-user shadow-sm">
                 <div className="card-header">
@@ -33,32 +35,11 @@ const UserComponent = () => {
                   />
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title mt-5">Admin</h5>
+                  <h5 className="card-title mt-5">Employé</h5>
                   <div className="card-text text-muted">
-                    <p className="m-0">Admin</p>
+                    <p className="m-0">Nom de l'employé</p>
                     <p>
-                      <a href={`mailto:admin@example.com`}>admin@example.com</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* user */}
-            <div className="col">
-              <div className="card card-user shadow-sm">
-                <div className="card-header">
-                  <img
-                    className="img-md img-avatar"
-                    src="images/black.png"
-                    alt="User pic"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title mt-5">Employée</h5>
-                  <div className="card-text text-muted">
-                    <p className="m-0">Employée</p>
-                    <p>
-                      <a href={`mailto:admin@example.com`}>user@example.com</a>
+                      <a href={`mailto:user@example.com`}>user@example.com</a>
                     </p>
                   </div>
                 </div>
@@ -66,12 +47,12 @@ const UserComponent = () => {
             </div>
           </div>
 
-          {/* nav */}
+          {/* Navigation de pagination */}
           <nav className="float-end mt-4" aria-label="Page navigation">
             <ul className="pagination">
               <li className="page-item disabled">
                 <Link className="page-link" to="#">
-                  Previous
+                  Précédent
                 </Link>
               </li>
               <li className="page-item active">
@@ -81,7 +62,7 @@ const UserComponent = () => {
               </li>
               <li className="page-item">
                 <Link className="page-link" to="#">
-                  Next
+                  Suivant
                 </Link>
               </li>
             </ul>

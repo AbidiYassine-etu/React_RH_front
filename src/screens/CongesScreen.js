@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../components/sidebar"
+import Sidebar from "../components/products/Sidebar"
 import Header from "../components/Header"
 import CongesMain from "../components/orders/CongesMain";
 
@@ -8,7 +8,7 @@ const CongesScreen = () => {
         <>
             <Sidebar />
             <main className="main-wrap">
-                <Header />
+                
                 <CongesMain />
             </main>
         </>

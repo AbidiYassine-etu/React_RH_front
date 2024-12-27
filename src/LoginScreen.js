@@ -1,34 +1,35 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";  
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null); 
+    e.preventDefault(); // Prevent default form submission behavior
 
     try {
-      const response = await axios.post("http://localhost:8082/employee/login", {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post("http://localhost:8082/auth/login", { email, password });
+      const { token, role } = response.data;
 
-      if (response && response.data) {
-        console.log("Login successful", response.data);
-        localStorage.setItem("token", response.data.token);
-      } else {
-        setError("Unexpected response format from server.");
+      // Store token and role in localStorage
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", role);
+
+      // Redirect based on role
+      if (role === "EMPLOYEE") {
+        navigate("/employees");
+        console.log(token);
+      } else if (role === "ADMIN_RH") {
+        navigate("/admin");
+        console.log(token);
       }
     } catch (error) {
-      if (error.response && error.response.data) {
-        setError(error.response.data.message || "Login failed. Please try again.");
-      } else {
-        setError("An unknown error occurred. Please try again.");
-      }
       console.error("Login failed", error);
+      setError("Invalid credentials");
     }
   };
 

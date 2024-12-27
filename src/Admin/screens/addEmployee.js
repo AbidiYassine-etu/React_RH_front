@@ -1,7 +1,7 @@
-import React from "react";
-import Sidebar from "../components/sidebar"
-import Header from "../components/Header"
-import AddEmployeeMain from "../components/products/AddEmployeeMain";
+import React from 'react';
+import Header from '../Header';
+import Sidebar from '../sidebar';
+import AddEmployeeMain from '../main/addEmployeeMain';
 
 const AddEmployee = () => {
     return (

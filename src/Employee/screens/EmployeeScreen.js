@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from '../components/Header';
-import Main from '../components/Home/Main';
 import Sidebar from '../components/sidebar';
+import CalendarGfg from '../components/Main';
 
-const HomeScreen = () => {
+const EmployeeScreen = () => {
     return (
         <>
             <Sidebar />
             <main className="main-wrap">
                 <Header />
-                <Main />
+                <CalendarGfg />
             </main>
         </>
     );
 };
 
-export default HomeScreen;
+export default EmployeeScreen;

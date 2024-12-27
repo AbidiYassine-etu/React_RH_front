@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../components/sidebar"
 import Header from "../components/Header"
-import CongesMain from "../components/orders/CongesMain";
+import CongesMain from "../main/CongesMain";
 
 const CongesScreen = () => {
     return (
